@@ -189,12 +189,17 @@ p{margin:0}
    SERVICES — grid (all visible, no interaction)
    ============================================================ */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
-.svc-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;
-  box-shadow:0 6px 20px rgba(70,52,16,.05);transition:transform .3s var(--ease-out),border-color .3s,box-shadow .3s}
-.svc-item:hover{transform:translateY(-4px);border-color:rgba(201,162,75,.5);box-shadow:var(--shadow)}
-.svc-item__ico{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-  background:radial-gradient(120% 120% at 30% 20%,rgba(201,162,75,.26),rgba(201,162,75,.08));border:1px solid rgba(201,162,75,.4);margin-bottom:18px}
-.svc-item__ico svg{width:27px;height:27px;color:var(--gold-deep);stroke-width:1.6}
+.svc-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:0;overflow:hidden;
+  box-shadow:0 8px 24px rgba(0,0,0,.4);transition:transform .3s var(--ease-out),border-color .3s,box-shadow .3s}
+.svc-item:hover{transform:translateY(-4px);border-color:rgba(217,180,90,.5);box-shadow:var(--shadow)}
+.svc-item__photo{aspect-ratio:16/9;overflow:hidden;position:relative}
+.svc-item__photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out)}
+.svc-item__photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(21,21,24,.6))}
+.svc-item:hover .svc-item__photo img{transform:scale(1.06)}
+.svc-item__body{padding:40px 24px 26px;position:relative}
+.svc-item__ico{position:absolute;top:-26px;left:24px;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(120% 120% at 30% 20%,rgba(217,180,90,.4),rgba(30,24,10,.92));border:1px solid rgba(217,180,90,.5);box-shadow:0 10px 22px rgba(0,0,0,.55);z-index:2}
+.svc-item__ico svg{width:26px;height:26px;color:var(--gold-2);stroke-width:1.7}
 .svc-item h3{font-size:18.5px;color:var(--ink)}
 .svc-item p{color:var(--muted);font-size:14.5px;margin-top:9px;line-height:1.6}
 
